@@ -180,7 +180,7 @@ class SystemUser extends Model
 
         // 角色信息
         $auths = [];
-        if ($user->id !== 1) {
+        if (intval( $user->id ) !== 1) {
             $auths = RoleModel::getRoleAuth($user->role_id);
             if (empty($auths)) {
                 $this->error = '绑定的角色不可用！';
